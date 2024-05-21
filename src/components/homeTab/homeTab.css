@@ -1,0 +1,127 @@
+.debt-item {
+    width: 350px;
+    display: flex;
+    justify-content: space-between;
+    background-color: #CBE5FE;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    font-variation-settings: "slnt" 0;
+    touch-action: pan-y;
+    user-select: none;
+    min-width: 100%;
+    position: relative;
+    z-index: 0;
+}
+
+.debt-item.grabbing * {
+    pointer-events: none;
+}
+
+.grabbing {
+    cursor: grabbing;
+}
+
+.debt-container {
+    gap: 15px;
+    max-width: 350px;
+    width: 100%;
+    max-height: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 10px;
+    padding-bottom: 40px;
+    box-sizing: border-box;
+    overflow: scroll;
+
+    touch-action: pan-y;
+}
+
+.debt-container::-webkit-scrollbar {
+    display: none;
+}
+
+.debt-text {
+    padding: 5px;
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.button-yes,
+.button-no {
+    width: 72px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-right: 18px;
+}
+
+.button-no {
+    background-color: #EDDC53;
+}
+
+.button-yes {
+    background-color: #B9CBE1;
+}
+
+button:active {
+    transform: scale(0.97);
+}
+
+.create-deal-button {
+    margin-top: 20px;
+    background-color: #CBE5FE;
+    font-size: 20px;
+    width: 160px;
+    height: 42px;
+}
+
+.pay {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+    width: 180px;
+    height: 60px;
+    background-color: #489aff;
+
+}
+
+.loader {
+    width: 50px;
+    aspect-ratio: 1;
+    display: grid;
+    mask: unset;
+    -webkit-mask: conic-gradient(from 15deg, #0000, #000);
+    animation: l26 1s infinite steps(12);
+}
+
+.loader,
+.loader:before,
+.loader:after {
+    background:
+        radial-gradient(closest-side at 50% 12.5%,
+            #517DA2 96%, #0000) 50% 0/20% 80% repeat-y,
+        radial-gradient(closest-side at 12.5% 50%,
+            #517DA2 96%, #0000) 0 50%/80% 20% repeat-x;
+}
+
+.loader:before,
+.loader:after {
+    content: "";
+    grid-area: 1/1;
+    transform: rotate(30deg);
+}
+
+.loader:after {
+    transform: rotate(60deg);
+}
+
+@keyframes l26 {
+    100% {
+        transform: rotate(1turn)
+    }
+}
